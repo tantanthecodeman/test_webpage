@@ -8,4 +8,26 @@
 .container{
   max-width: 800px;
   border-radius: 3px;
+  padding: 20px;
+}
+
+.upload-box{
+  border: 2px dashed;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+input[type="file"]{
+  display: none;
+}
+
+.upload_button{
+  color: black;
+  background-color: #ADD8E6;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
 }
