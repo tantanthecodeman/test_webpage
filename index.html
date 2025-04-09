@@ -18,7 +18,26 @@
         <label for="pdf-upload" class="upload_button">Choose PDF file</label>
         <div id="file-name"></div>
       </div>
+
+      <button id="generate_button" disabled>Generate script</button>
+
+      <div class="result-sec">
+        <h2 style="font-family:Arial, Helvetica, sans-serif;
+        font-size:25px;
+        text-align: center;
+        font-weight: 300;">Generated Script</h2>
+          <div id="loading" class="hidden">Processing...</div>
+          <textarea id="script-output" readonly></textarea>
+          <div class="buttons">
+              <button id="copy-btn" disabled>Copy Script</button>
+              <button id="video-btn" disabled>Send to HeyGen</button>
+          </div>
+      </div>
+
+    
       
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
