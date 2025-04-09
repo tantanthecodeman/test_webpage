@@ -1,43 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset ="UTF-8">
-    <meta name="viewport" content="width=device-width, initail scale=1.0">
-    <title>Test Webpage</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="container">
-      <div class="upload-box">
-        <h2 style="font-family: Arial, Helvetica, sans-serif;
-        font-weight: 300;
-        font-size: 25px;
-        margin-top: 5px;
-        text-align:center;">Upload PDF</h2>
-        <input type="file" id="pdf-upload" accept=".pdf">
-        <label for="pdf-upload" class="upload_button">Choose PDF file</label>
-        <div id="file-name"></div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Study Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>AI Study Assistant</h1>
 
-      <button id="generate_button" disabled>Generate script</button>
-
-      <div class="result-sec">
-        <h2 style="font-family:Arial, Helvetica, sans-serif;
-        font-size:25px;
-        text-align: center;
-        font-weight: 300;">Generated Script</h2>
-          <div id="loading" class="hidden">Processing...</div>
-          <textarea id="script-output" readonly></textarea>
-          <div class="buttons">
-              <button id="copy-btn" disabled>Copy Script</button>
-              <button id="video-btn" disabled>Send to HeyGen</button>
-          </div>
-      </div>
-
-    
-      
+    <div class="upload-area">
+      <input type="file" id="pdf-upload" accept="application/pdf" hidden />
+      <button id="upload-btn" class="btn">Upload PDF</button>
+      <button id="generate-btn" class="btn" disabled>Generate Script</button>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <div id="file-preview" class="file-info hidden"></div>
+
+    <div id="loader" class="loader hidden">Processing... Please wait.</div>
+
+    <div id="result" class="output-area hidden">
+      <h2>Generated Script</h2>
+      <textarea id="summary-text" rows="12" readonly></textarea>
+      <div class="btn-group">
+        <button id="copy-btn" class="btn">Copy Script</button>
+        <button id="video-btn" class="btn">Generate Video</button>
+      </div>
+    </div>
+
+    <div id="message" class="message hidden"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
