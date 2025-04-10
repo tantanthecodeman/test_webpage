@@ -5,33 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AI Study Assistant</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Load Mermaid.js -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: false });
+    window.mermaid = mermaid; // Make available globally
+  </script>
 </head>
 <body>
   <div class="container">
     <h1>AI Study Assistant</h1>
 
-    <div class="upload-area">
+    <!-- PDF Upload Section -->
+    <div class="upload-box">
       <input type="file" id="pdf-upload" accept="application/pdf" hidden />
-      <button id="upload-btn" class="btn">Upload PDF</button>
-      <button id="generate-btn" class="btn" disabled>Generate Script</button>
+      <button id="upload-btn" class="upload_button">Upload PDF</button>
+      <button id="generate-btn" class="btn" disabled>Generate Script + Flowchart</button>
     </div>
 
-    <div id="file-preview" class="file-info hidden"></div>
+    <!-- File name preview -->
+    <div id="file-preview" class="upload-preview hidden"></div>
 
+    <!-- Loading message -->
     <div id="loader" class="loader hidden">Processing... Please wait.</div>
 
-    <div id="result" class="output-area hidden">
+    <!-- Generated Summary -->
+    <div class="result-section" id="result" style="display: none;">
       <h2>Generated Script</h2>
-      <textarea id="summary-text" rows="12" readonly></textarea>
-      <div class="btn-group">
+      <textarea id="summary-text" readonly></textarea>
+      <div class="buttons">
         <button id="copy-btn" class="btn">Copy Script</button>
         <button id="video-btn" class="btn">Generate Video</button>
       </div>
     </div>
 
+    <!-- Mermaid Flowchart Output -->
+    <div class="result-section" id="flowchart-section" style="display: none;">
+      <h2>AI-Generated Flowchart</h2>
+      <pre class="mermaid" id="mermaid-diagram"></pre>
+    </div>
+
+    <!-- Message box for alerts -->
     <div id="message" class="message hidden"></div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" type="module"></script>
 </body>
 </html>
